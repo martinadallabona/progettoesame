@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="it">
-  
-  <head>
-  <title>Progetto d'esame il mio sito web</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martina Dalla Bona - Progetto esame</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Chi sono</h1>
-  <p>Ciao, sono Martina Dalla Bona perito grafico esperto in comunicazione, con una solida esperienza nel settore. Attualmente sono una studentessa di Graphic Design e Art Direction e conseguirò la laurea a settembre di quest'anno.Ho una forte passione per il design visivo e la strategia comunicativa, se vuoi unire creatività e competenza tecnica per realizzare progetti efficaci e innovativi sono la perosna giusta.</p>
+    <header>
+        <div class="logo">
+            <img src="logo 4.png" alt="Logo" class="rotation">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">Chi Sono</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        
+        <div class="overlay">
+            <h1>Martina Dalla Bona</h1>
+            <p>Graphic Designer & Art Director.</p>
+        </div>
+    </section>
+    <section id="about">
+        <img src= "martina.png" alt="martina"
+        width="300" height="400">
+        <h2>Chi Sono</h2>
+        <p>Sono una professionista della comunicazione visiva con anni di esperienza nella creazione di progetti grafici di impatto.</p>
+    </section>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="works">
+            <div class="work-item">
+                <img src="lavoro1.jpg" alt="Lavoro 1">
+                <p>Descrizione lavoro 1</p>
+            </div>
+            <div class="work-item">
+                <img src="lavoro2.jpg" alt="Lavoro 2">
+                <p>Descrizione lavoro 2</p>
+            </div>
+            <div class="work-item">
+                <img src="lavoro3.jpg" alt="Lavoro 3">
+                <p>Descrizione lavoro 3</p>
+            </div>
+        </div>
+    </section>
+    <section id="contatti">
+        <h2>Contatti</h2>
+        <p>Email: martidallabona003@gmail.com</p>
+        <p>Telefono: +39 3662895233</p>
+        <form>
+            <input type="text" placeholder="Il tuo nome" required>
+            <input type="email" placeholder="La tua email" required>
+            <textarea placeholder="Il tuo messaggio" required></textarea>
+            <button type="submit">Invia</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2025 Martina Dalla Bona - Tutti i diritti riservati</p>
+    </footer>
 </body>
 </html>
