@@ -28,10 +28,9 @@
         </div>
     </div>
 
-    <header>
-        <div class="logo-container">
-            <img src="logo 4.png" alt="Logo di Martina Dalla Bona" class="rotating">
-        </div>
+    <div class="logo-container">
+        <img src="logo 4.png" alt="Logo di Martina Dalla Bona" class="rotating">
+    </div>
         
         <nav class="main-nav">
             <ul>
@@ -136,8 +135,7 @@
         <p>© 2025 Martina Dalla Bona - Tutti i diritti riservati</p>
     </footer>
 
-    <script>
-        // Scroll to top functionality
+    document.addEventListener('DOMContentLoaded', () => {
         const scrollToTopBtn = document.getElementById('scrollToTop');
         
         window.addEventListener('scroll', () => {
@@ -147,10 +145,13 @@
                 scrollToTopBtn.classList.remove('show');
             }
         });
-
+    
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
-                top: 0
-    </script>
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
 </body>
 </html>
