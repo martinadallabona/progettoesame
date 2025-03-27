@@ -3,67 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina Dalla Bona - Progetto esame</title>
+    <title>Martina Dalla Bona - Graphic Designer & Art Director</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <header>
         <div class="logo">
-            <img src="logo 4.png" alt="Logo" class="rotation">
+            <img src="logo 4.png" alt="Logo di Martina Dalla Bona" class="rotating">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Chi Sono</a></li>
+                    <li><a href="#graphic-design">Graphic Design</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#location">Dove mi trovo</a></li>
+                    <li><a href="#contact">Contattami</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">Chi Sono</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contatti">Contatti</a></li>
-            </ul>
-        </nav>
     </header>
-    <section class="hero">
-        
-        <div class="overlay">
-            <h1>Martina Dalla Bona</h1>
-            <p>Graphic Designer & Art Director.</p>
-        </div>
-    </section>
-    <section id="about">
-        <img src= "martina.png" alt="martina"
-        width="300" height="400">
-        <h2>Chi Sono</h2>
-        <p>Sono una professionista della comunicazione visiva con anni di esperienza nella creazione di progetti grafici di impatto.</p>
-    </section>
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="works">
-            <div class="work-item">
-                <img src="lavoro1.jpg" alt="Lavoro 1">
-                <p>Descrizione lavoro 1</p>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="overlay">
+                <h1>Martina Dalla Bona</h1>
+                <p>Graphic Designer & Art Director</p>
             </div>
-            <div class="work-item">
-                <img src="lavoro2.jpg" alt="Lavoro 2">
-                <p>Descrizione lavoro 2</p>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Chi Sono</h2>
+                    <p>Sono una professionista della comunicazione visiva con anni di esperienza nella creazione di progetti grafici di impatto. La mia passione è trasformare concetti creativi in soluzioni visive coinvolgenti e memorabili.</p>
+                </div>
+                <img src="martina.png" alt="Ritratto di Martina Dalla Bona" class="about-image">
             </div>
-            <div class="work-item">
-                <img src="lavoro3.jpg" alt="Lavoro 3">
-                <p>Descrizione lavoro 3</p>
+        </section>
+
+        <section id="graphic-design">
+            <div class="graphic-design-content">
+                <img src="foto MARTY.png" alt="Foto di Martina" class="marty-image">
+                <div class="graphic-design-text">
+                    <h2>Graphic Design</h2>
+                    <p>Il graphic design è l'arte di comunicare visivamente attraverso immagini, tipografia e layout. È un linguaggio universale che trasforma idee complesse in messaggi chiari e coinvolgenti, combinando creatività e strategia per catturare l'attenzione e trasmettere emozioni.</p>
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="contatti">
-        <h2>Contatti</h2>
-        <p>Email: martidallabona003@gmail.com</p>
-        <p>Telefono: +39 3662895233</p>
-        <form>
-            <input type="text" placeholder="Il tuo nome" required>
-            <input type="email" placeholder="La tua email" required>
-            <textarea placeholder="Il tuo messaggio" required></textarea>
-            <button type="submit">Invia</button>
-        </form>
-    </section>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="works">
+                <div class="work-item">
+                    <img src="lavoro1.jpg" alt="Progetto grafico 1">
+                    <h3>Lavoro 1</h3>
+                    <p>Descrizione dettagliata del primo progetto grafico</p>
+                </div>
+                <div class="work-item">
+                    <img src="lavoro2.jpg" alt="Progetto grafico 2">
+                    <h3>Lavoro 2</h3>
+                    <p>Descrizione dettagliata del secondo progetto grafico</p>
+                </div>
+                <div class="work-item">
+                    <img src="lavoro3.jpg" alt="Progetto grafico 3">
+                    <h3>Lavoro 3</h3>
+                    <p>Descrizione dettagliata del terzo progetto grafico</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="location">
+            <h2>Dove mi trovo</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44568.91789333625!2d8.61219477928395!3d45.44971883252138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47865a24fa5a6941%3A0xc20a9dbd1acadc6!2sNovara%2C%20NO!5e0!3m2!1sit!2sit!4v1699523432321!5m2!1sit!2sit" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contattami</h2>
+            <div class="contact-info">
+                <div class="contact-details">
+                    <p><strong>Email:</strong> martidallabona003@gmail.com</p>
+                    <p><strong>Telefono:</strong> +39 366 289 5233</p>
+                </div>
+                <div class="social-links">
+                    <h3>Seguimi</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="form-section">
+            <h2>Invia un Messaggio</h2>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="La tua email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Messaggio</label>
+                    <textarea id="message" name="message" placeholder="Il tuo messaggio" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Invia Messaggio</button>
+            </form>
+        </section>
+    </main>
+
     <footer>
         <p>© 2025 Martina Dalla Bona - Tutti i diritti riservati</p>
     </footer>
+
+    <script>
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
