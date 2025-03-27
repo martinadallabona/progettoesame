@@ -13,21 +13,38 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <header>
-        <div class="logo">
-            <img src="logo 4.png" alt="Logo di Martina Dalla Bona" class="rotating">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Chi Sono</a></li>
-                    <li><a href="#graphic-design">Graphic Design</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#location">Dove mi trovo</a></li>
-                    <li><a href="#contact">Contattami</a></li>
-                </ul>
-            </nav>
+    <div class="fixed-contact">
+        <div class="contact-details">
+            <p><strong>Email:</strong> martidallabona003@gmail.com</p>
+            <p><strong>Telefono:</strong> +39 366 289 5233</p>
         </div>
+        <div class="social-links">
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo 4.png" alt="Logo di Martina Dalla Bona" class="rotating">
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Chi Sono</a></li>
+                <li><a href="#graphic-design">Graphic Design</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#location">Dove mi trovo</a></li>
+                <li><a href="#contact">Contattami</a></li>
+            </ul>
+        </nav>
     </header>
+
 
     <main>
         <section id="home" class="hero">
@@ -92,25 +109,6 @@
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contattami</h2>
-            <div class="contact-info">
-                <div class="contact-details">
-                    <p><strong>Email:</strong> martidallabona003@gmail.com</p>
-                    <p><strong>Telefono:</strong> +39 366 289 5233</p>
-                </div>
-                <div class="social-links">
-                    <h3>Seguimi</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="form-section">
             <h2>Invia un Messaggio</h2>
             <form action="#" method="POST" class="contact-form">
@@ -152,10 +150,7 @@
 
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+                top: 0
     </script>
 </body>
 </html>
