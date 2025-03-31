@@ -20,30 +20,33 @@
         </div>
         <div class="social-links">
             <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+             
                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+               
+               
+                    
+                </a>
             </div>
         </div>
     </div>
 
-    <div class="logo-container">
-        <img src="logo 4.png" alt="Logo di Martina Dalla Bona" class="rotating">
-    </div>
-        
+    <header>
+        <div class="logo-container">
+            <img src="logo 4.png" alt="Logo di Martina Dalla Bona" class="rotating">
+        </div>
+            
         <nav class="main-nav">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Chi Sono</a></li>
                 <li><a href="#graphic-design">Graphic Design</a></li>
+                <li><a href="#skills">Le mie competenze</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#location">Dove mi trovo</a></li>
-                <li><a href="#contact">Contattami</a></li>
+                <li><a href="#form-section">Contattami</a></li>
             </ul>
         </nav>
     </header>
-
 
     <main>
         <section id="home" class="hero">
@@ -65,10 +68,46 @@
 
         <section id="graphic-design">
             <div class="graphic-design-content">
-                <img src="foto MARTY.png" alt="Foto di Martina" class="marty-image">
+                <img src="graphic design.jpg" alt="Foto di Martina" class="marty-image">
                 <div class="graphic-design-text">
                     <h2>Graphic Design</h2>
                     <p>Il graphic design è l'arte di comunicare visivamente attraverso immagini, tipografia e layout. È un linguaggio universale che trasforma idee complesse in messaggi chiari e coinvolgenti, combinando creatività e strategia per catturare l'attenzione e trasmettere emozioni.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Le mie competenze</h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-name">Illustrator</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">InDesign</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%;">85%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Photoshop</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%;">80%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Certificazione linguistica inglese</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%;">75%</div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Certificazione ECDL</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;">95%</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -135,23 +174,25 @@
         <p>© 2025 Martina Dalla Bona - Tutti i diritti riservati</p>
     </footer>
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const scrollToTopBtn = document.getElementById('scrollToTop');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
         
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-    
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
-    });
+    </script>
 </body>
 </html>
