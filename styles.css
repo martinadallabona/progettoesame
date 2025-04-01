@@ -127,7 +127,7 @@ header {
 /* Graphic Design section */
 #graphic-design {
     padding: 50px 20px;
-    background-color: #f4f4f4;
+    background-color: #96e2e2;
 }
 
 .graphic-design-content {
@@ -193,7 +193,7 @@ header {
 /* Portfolio section */
 #portfolio {
     padding: 50px 20px;
-    background-color: #f4f4f4;
+    background-color: #96e2e2;
 }
 
 #portfolio h2 {
@@ -238,7 +238,7 @@ header {
 /* Contact form section */
 #form-section {
     padding: 50px 20px;
-    background-color: #f4f4f4;
+    background-color: #96e2e2;
 }
 
 #form-section h2 {
@@ -270,7 +270,7 @@ header {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #afeeee;
     border-radius: 5px;
     font-size: 14px;
 }
