@@ -157,7 +157,7 @@ header {
     background-color: #f9f9f9;
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #002D62;
 }
 
 .about-text {
@@ -181,14 +181,14 @@ header {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #c5e8ff;
+    background-color: #ffff;
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #002D62;
 }
 
 .marty-image {
-    max-width: 500px;
+    max-width: 400px;
     border-radius: 10px;
     margin-right: 50px;
 }
@@ -258,7 +258,7 @@ header {
     margin: 0 auto;
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #002D62;
 }
 
 .work-item {
@@ -302,10 +302,10 @@ header {
 .contact-form {
     max-width: 500px;
     margin: 0 auto;
-    background-color: #c5e8ff;
+    background-color: #ffff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px #002D62;
 }
 
 .form-group {
@@ -323,7 +323,7 @@ header {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #c5e8ff;
+    border: 1px solid #ffff;
     border-radius: 5px;
     font-size: 14px;
 }
@@ -394,7 +394,7 @@ header {
 }
 
 .fixed-contact .social-icon:hover {
-    color: #c5e8ff;
+    color: #ffff;
 }
 
 /* Footer */
@@ -404,7 +404,7 @@ footer {
     text-align: center;
     padding: 20px;
     position: relative;
-    z-index: 600; /* Valore più alto rispetto alla fixed-contact */
+    z-index: 700; /* Valore più alto rispetto alla fixed-contact */
 }
 
 /* Rotating logo effect */
