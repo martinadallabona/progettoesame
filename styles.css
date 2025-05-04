@@ -240,7 +240,7 @@ header {
     font-size: 12px;
 }
 
-/* Portfolio section */
+/* Portfolio section - Aggiornato per corrispondere alla sezione competenze */
 #portfolio {
     padding: 50px 20px;
     background-color: #fff;
@@ -253,8 +253,9 @@ header {
 
 .works {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px; /* Stessa larghezza della sezione competenze */
     margin: 0 auto;
     border-radius: 20px;
     padding: 30px;
@@ -262,14 +263,26 @@ header {
 }
 
 .work-item {
-    flex: 1;
-    margin: 0 15px;
+    width: 100%;
+    margin: 0;
     text-align: center;
+    transition: opacity 0.5s ease;
 }
 
 .work-item img {
     max-width: 100%;
     border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.work-item h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #002D62;
+}
+
+.work-item p {
+    margin-bottom: 20px;
 }
 
 /* Location section */

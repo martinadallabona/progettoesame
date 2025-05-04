@@ -17,6 +17,204 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Portfolio carousel setup
+    const setupPortfolioCarousel = () => {
+        const worksContainer = document.querySelector('.works');
+        if (!worksContainer) return;
+        
+        const workItems = Array.from(document.querySelectorAll('.work-item'));
+        if (!workItems.length) return;
+        
+        // Nascondi tutti i lavori tranne il primo
+        workItems.forEach((item, index) => {
+            if (index > 0) {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Indice corrente
+        let currentIndex = 0;
+        
+        // Crea contenitore per le frecce di navigazione
+        const navContainer = document.createElement('div');
+        navContainer.className = 'portfolio-nav';
+        navContainer.style.display = 'flex';
+        navContainer.style.justifyContent = 'center';
+        navContainer.style.marginTop = '20px';
+        navContainer.style.gap = '15px';
+        
+        // Crea freccia sinistra
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'nav-arrow prev';
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevBtn.style.backgroundColor = '#002D62';
+        prevBtn.style.color = 'white';
+        prevBtn.style.border = 'none';
+        prevBtn.style.borderRadius = '50%';
+        prevBtn.style.width = '40px';
+        prevBtn.style.height = '40px';
+        prevBtn.style.cursor = 'pointer';
+        prevBtn.style.transition = 'all 0.3s ease';
+        
+        // Crea freccia destra
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'nav-arrow next';
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextBtn.style.backgroundColor = '#002D62';
+        nextBtn.style.color = 'white';
+        nextBtn.style.border = 'none';
+        nextBtn.style.borderRadius = '50%';
+        nextBtn.style.width = '40px';
+        nextBtn.style.height = '40px';
+        nextBtn.style.cursor = 'pointer';
+        nextBtn.style.transition = 'all 0.3s ease';
+        
+        // Crea indicatore di slides
+        const slideIndicator = document.createElement('div');
+        slideIndicator.className = 'slide-indicator';
+        slideIndicator.style.display = 'flex';
+        slideIndicator.style.justifyContent = 'center';
+        slideIndicator.style.marginTop = '15px';
+        slideIndicator.style.gap = '8px';
+        
+        // Aggiungi indicatori per ogni slide
+        workItems.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.className = index === 0 ? 'dot active' : 'dot';
+            dot.style.display = 'inline-block';
+            dot.style.width = '10px';
+            dot.style.height = '10px';
+            dot.style.borderRadius = '50%';
+            dot.style.backgroundColor = index === 0 ? '#002D62' : '#ccc';
+            dot.style.transition = 'background-color 0.3s ease';
+            dot.style.cursor = 'pointer';
+            
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+            
+            slideIndicator.appendChild(dot);
+        });
+        
+        // Funzione per mostrare una slide specifica
+        const showSlide = (index) => {
+            // Nascondi tutte le slides
+            workItems.forEach(item => {
+                item.style.display = 'none';
+                item.style.opacity = '0';
+                item.style.transition = 'opacity 0.5s ease';
+            });
+            
+            // Aggiorna dots
+            const dots = slideIndicator.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                dot.style.backgroundColor = i === index ? '#002D62' : '#ccc';
+                dot.className = i === index ? 'dot active' : 'dot';
+            });
+            
+            // Mostra la slide corrente con animazione fade-in
+            currentIndex = index;
+            workItems[currentIndex].style.display = 'block';
+            
+            // Trick per forzare il reflow e applicare correttamente la transizione
+            void workItems[currentIndex].offsetWidth;
+            
+            workItems[currentIndex].style.opacity = '1';
+            
+            // Aggiorna stato dei pulsanti (disabilita se siamo al primo o ultimo)
+            updateButtonStates();
+        };
+        
+        // Funzione per aggiornare lo stato dei pulsanti
+        const updateButtonStates = () => {
+            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+            prevBtn.style.cursor = currentIndex === 0 ? 'default' : 'pointer';
+            
+            nextBtn.style.opacity = currentIndex === workItems.length - 1 ? '0.5' : '1';
+            nextBtn.style.cursor = currentIndex === workItems.length - 1 ? 'default' : 'pointer';
+        };
+        
+        // Event listeners per i pulsanti di navigazione
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                showSlide(currentIndex - 1);
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < workItems.length - 1) {
+                showSlide(currentIndex + 1);
+            }
+        });
+        
+        // Hover effect per i pulsanti
+        [prevBtn, nextBtn].forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                if ((btn === prevBtn && currentIndex > 0) || 
+                    (btn === nextBtn && currentIndex < workItems.length - 1)) {
+                    btn.style.backgroundColor = '#001a3a';
+                    btn.style.transform = 'scale(1.1)';
+                }
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.backgroundColor = '#002D62';
+                btn.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Modifica la struttura del portfolio
+        const portfolioSection = document.getElementById('portfolio');
+        
+        // Modifica lo stile del contenitore dei lavori
+        worksContainer.style.flexDirection = 'column';
+        worksContainer.style.alignItems = 'center';
+        
+        // Inizializza stile di transizione per ogni item
+        workItems.forEach(item => {
+            item.style.transition = 'opacity 0.5s ease';
+            item.style.width = '100%';
+            item.style.margin = '0';
+        });
+        
+        // Aggiungi i controlli di navigazione
+        navContainer.appendChild(prevBtn);
+        navContainer.appendChild(nextBtn);
+        
+        // Aggiungi i controlli sotto al contenitore dei lavori
+        portfolioSection.appendChild(navContainer);
+        portfolioSection.appendChild(slideIndicator);
+        
+        // Inizializza lo stato dei pulsanti
+        updateButtonStates();
+        
+        // Gestione swipe per mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        worksContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        worksContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        const handleSwipe = () => {
+            const minSwipeDistance = 50;
+            const swipeDistance = touchEndX - touchStartX;
+            
+            if (swipeDistance > minSwipeDistance && currentIndex > 0) {
+                // Swipe a destra (precedente)
+                showSlide(currentIndex - 1);
+            } else if (swipeDistance < -minSwipeDistance && currentIndex < workItems.length - 1) {
+                // Swipe a sinistra (successivo)
+                showSlide(currentIndex + 1);
+            }
+        };
+    };
+
     // Gestione dei cookie
     const cookieBanner = document.getElementById('cookieBanner');
     const acceptCookiesBtn = document.getElementById('acceptCookies');
@@ -237,4 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Inizializza menu mobile
     createMobileMenu();
+    
+    // Inizializza il carousel del portfolio
+    setupPortfolioCarousel();
 });
