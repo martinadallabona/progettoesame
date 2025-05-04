@@ -18,6 +18,7 @@ header {
     align-items: center;
     padding: 20px;
     background-color: #fff;
+    position: relative; /* Necessario per posizionare il pulsante mobile menu */
 }
 
 .logo-container {
@@ -48,6 +49,34 @@ header {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #002D62;
+}
+
+.cv-download {
+    background-color: #002D62;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cv-download:hover {
+    background-color: #003b80;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+    display: none; /* Nascosto di default, mostrato in JS per schermi piccoli */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #002D62;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 /* Section titles */
@@ -74,11 +103,16 @@ header {
     transition: opacity 0.3s, transform 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    transform: translateY(20px);
 }
 
 .scroll-to-top.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: #001a3a;
 }
 
 /* Hero section full width */
@@ -331,6 +365,7 @@ header {
     align-items: center;
     padding: 10px 20px;
     z-index: 500;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .fixed-contact .contact-details {
@@ -382,6 +417,124 @@ footer {
     100% { transform: rotateY(360deg); }
 }
 
+/* Cookie Banner Migliorato */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 45, 98, 0.3);
+    z-index: 2000;
+    transform: translateY(150%);
+    transition: transform 0.5s ease-in-out;
+    border: 2px solid #002D62;
+}
+
+.cookie-banner.show {
+    transform: translateY(0);
+}
+
+.cookie-container {
+    padding: 20px;
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cookie-icon {
+    font-size: 32px;
+    color: #002D62;
+    flex: 0 0 40px;
+    text-align: center;
+}
+
+.cookie-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.cookie-text h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 8px;
+    color: #002D62;
+    font-size: 20px;
+}
+
+.cookie-text p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.cookie-btn.accept {
+    background-color: #002D62;
+    color: white;
+}
+
+.cookie-btn.accept:hover {
+    background-color: #001a3a;
+}
+
+.cookie-btn.reject {
+    background-color: #c5e8ff;
+    color: #002D62;
+}
+
+.cookie-btn.reject:hover {
+    background-color: #94d3ff;
+}
+
+.cookie-btn.close {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 50%;
+}
+
+.cookie-btn.close:hover {
+    background-color: #ddd;
+}
+
+/* Animazioni aggiuntive */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
 /* Responsive fixes */
 @media (max-width: 768px) {
     .about-content,
@@ -423,5 +576,43 @@ footer {
     .social-links {
         margin-left: 0;
         margin-top: 10px;
+    }
+    
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cookie-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .cookie-banner {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    /* Stile menu mobile */
+    .main-nav.mobile-active {
+        display: block;
+    }
+    
+    .main-nav.mobile-active ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+    
+    .main-nav.mobile-active ul li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .main-nav.mobile-active ul li:last-child {
+        border-bottom: none;
     }
 }
