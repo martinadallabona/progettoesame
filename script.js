@@ -178,8 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         // Aggiungi i controlli di navigazione
-        navContainer.appendChild(prevBtn);
-        navContainer.appendChild(nextBtn);
+        portfolioSection.insertBefore(navContainer, worksContainer);
         
         // Aggiungi i controlli sotto al contenitore dei lavori
         portfolioSection.appendChild(navContainer);

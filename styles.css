@@ -117,7 +117,7 @@ header {
 
 /* Hero section full width */
 .hero {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #002D62;
     color: white;
@@ -358,7 +358,6 @@ header {
     font-weight: 500;
     transition: background-color 0.3s ease;
     position: relative;
-    z-index: 1000;
 }
 
 .submit-btn:hover {
@@ -410,15 +409,7 @@ header {
     color: #ffff;
 }
 
-/* Footer */
-footer {
-    background-color: #003b80;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    z-index: 700; /* Valore più alto rispetto alla fixed-contact */
-}
+
 
 /* Rotating logo effect */
 .rotating {
@@ -590,7 +581,84 @@ footer {
         margin-left: 0;
         margin-top: 10px;
     }
-    
+    /* Stili per i checkbox della privacy */
+.privacy-consent,
+.marketing-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.privacy-consent input[type="checkbox"],
+.marketing-consent input[type="checkbox"] {
+    width: auto;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.privacy-consent label,
+.marketing-consent label {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.privacy-link {
+    color: #002D62;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+    color: #003b80;
+}
+
+/* Modal per l'informativa privacy */
+.privacy-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    color: #002D62;
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #002D62;
+}
     .cookie-content {
         flex-direction: column;
         text-align: center;
