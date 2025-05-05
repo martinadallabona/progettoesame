@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navContainer.className = 'portfolio-nav';
         navContainer.style.display = 'flex';
         navContainer.style.justifyContent = 'center';
-        navContainer.style.marginTop = '20px';
+        navContainer.style.marginBottom = '20px'; // Cambiato da marginTop a marginBottom
         navContainer.style.gap = '15px';
         
         // Crea freccia sinistra
@@ -177,11 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.margin = '0';
         });
         
-        // Aggiungi i controlli di navigazione
+        // Aggiungi i controlli di navigazione SOPRA il contenitore dei lavori
+        navContainer.appendChild(prevBtn);
+        navContainer.appendChild(nextBtn);
         portfolioSection.insertBefore(navContainer, worksContainer);
         
-        // Aggiungi i controlli sotto al contenitore dei lavori
-        portfolioSection.appendChild(navContainer);
+        // Aggiungi l'indicatore di slides sotto al contenitore dei lavori
         portfolioSection.appendChild(slideIndicator);
         
         // Inizializza lo stato dei pulsanti
