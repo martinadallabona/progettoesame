@@ -190,11 +190,13 @@ header {
 .marty-image {
     max-width: 400px;
     border-radius: 10px;
-    margin-right: 50px;
+    width:100%
 }
 
 .graphic-design-text {
     flex: 1;
+    margin: 0 0 0 30px
+
 }
 
 /* Skills section */
@@ -303,7 +305,7 @@ header {
 
 /* Contact form section */
 #form-section {
-    padding: 50px 20px;
+    padding: 50px 20px 150px 20px;
     
 }
 
@@ -545,6 +547,7 @@ header {
     .graphic-design-content {
         flex-direction: column;
         padding: 20px;
+        margin-left: 0px;
     }
 
     .about-text,
